@@ -12,7 +12,8 @@ func main() {
 	hargaLele = 13000
 	hargaBebek = 25000
 
-	fmt.Println("Silahkan pilih barang yang ingin dibeli!")
+	fmt.Println("Selamat Datang di Warung Makan 'Semua di Goyeng'")
+	fmt.Println("Silahkan pilih menu yang telah dipesan!")
 	fmt.Println("Daftar Menu:")
 	fmt.Println("1. Ayam Goyeng - Harga: Rp", hargaAyam)
 	fmt.Println("2. Lele Goyeng - Harga: Rp", hargaLele)
@@ -31,7 +32,7 @@ func main() {
 		} else if pilihan == 0 {
 			selesai = true
 		} else if pilihan != 1 && pilihan != 2 && pilihan != 3 {
-			fmt.Println("Pilihan tidak valid. Harap masukkan nomor yang valid.")
+			fmt.Println("Pilihan tidak tersedia, harap masukan kembali.")
 		} else {
 			fmt.Print("Masukkan jumlah makanan yang dipesan: ")
 			jumlahBrg := input()
@@ -51,13 +52,13 @@ func main() {
 
 				totalBiaya += harga * jumlah
 
-				fmt.Printf("Total biaya: Rp %d\n", totalBiaya)
+				fmt.Printf("Total biaya makanan: Rp %d\n", totalBiaya)
 			}
 		}
 	}
 
 	if totalBiaya > 0 {
-		fmt.Print("Masukkan nama Struk untuk menyimpan invoice: ")
+		fmt.Print("Masukkan nama struk: ")
 		namaFile := input()
 
 		file, err := os.Create(namaFile)
